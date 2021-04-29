@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>testing</title>
+</head>
+
+<body onload='myFunc()'>
+
+  <h1>Your Country name is:</h1>
+  <h2 id="name"></h2>
+
+  <script>
+
+    function myFunc() {
+    let apiKey = '1be9a6884abd4c3ea143b59ca317c6b2';
+    // Make the request
+    fetch('https://ipgeolocation.abstractapi.com/v1/?api_key=' + apiKey)
+      // Extract JSON body content from HTTP response
+      .then(response => response.json())
+      // Do something with the JSON data
+      .then(data => {
+        tome2 = data
+        var name = document.getElementById("name");
+      name.innerText = tome2["country"];
+      });
+    
+   
+
+    }
+      
+  </script>
+
+
+
+</body>
+
+</html>
